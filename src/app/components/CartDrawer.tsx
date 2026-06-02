@@ -140,7 +140,7 @@ export function CartDrawer() {
                     className="w-full py-4 bg-indigo-600 hover:bg-indigo-700 dark:bg-indigo-500 dark:hover:bg-indigo-600 text-white rounded-lg transition-colors font-semibold shadow-lg hover:shadow-indigo-500/50"
                   >
                     Checkout
-                  </button>
+                  </motion.button>
                 </div>
               )}
             </motion.div>
