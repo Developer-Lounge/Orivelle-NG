@@ -29,33 +29,39 @@ export function CartDrawer() {
               animate={{ x: 0 }}
               exit={{ x: '100%' }}
               transition={{ type: 'spring', damping: 30, stiffness: 300 }}
-              className="fixed top-0 right-0 h-full w-full max-w-md bg-white shadow-2xl z-50 flex flex-col"
+              className="fixed top-0 right-0 h-full w-full max-w-md bg-white dark:bg-neutral-900 shadow-2xl z-50 flex flex-col backdrop-blur-xl border-l border-neutral-200 dark:border-neutral-800"
             >
-              <div className="flex items-center justify-between p-6 border-b">
+              <div className="flex items-center justify-between p-6 border-b border-neutral-200 dark:border-neutral-800 bg-neutral-50 dark:bg-neutral-800/50">
                 <div className="flex items-center gap-2">
-                  <ShoppingBag className="w-5 h-5" />
-                  <h2>Shopping Cart ({items.length})</h2>
+                  <ShoppingBag className="w-5 h-5 text-indigo-600 dark:text-indigo-400" />
+                  <h2 className="font-semibold text-neutral-900 dark:text-neutral-100">Shopping Cart ({items.length})</h2>
                 </div>
-                <button
+                <motion.button
+                  whileHover={{ rotate: 90 }}
+                  whileTap={{ scale: 0.9 }}
                   onClick={closeCart}
-                  className="w-8 h-8 flex items-center justify-center rounded-lg hover:bg-gray-100 transition-colors"
+                  className="w-8 h-8 flex items-center justify-center rounded-lg hover:bg-neutral-200 dark:hover:bg-neutral-700 transition-colors text-neutral-600 dark:text-neutral-400"
                   aria-label="Close cart"
                 >
                   <X className="w-5 h-5" />
-                </button>
+                </motion.button>
               </div>
 
               <div className="flex-1 overflow-y-auto p-6">
                 {items.length === 0 ? (
                   <div className="flex flex-col items-center justify-center h-full text-center">
-                    <ShoppingBag className="w-16 h-16 text-gray-300 mb-4" />
-                    <p className="text-gray-500">Your cart is empty</p>
-                    <button
+                    <motion.div initial={{ scale: 0 }} animate={{ scale: 1 }} transition={{ type: 'spring' }}>
+                      <ShoppingBag className="w-16 h-16 text-neutral-300 dark:text-neutral-600 mb-4 mx-auto" />
+                    </motion.div>
+                    <p className="text-neutral-500 dark:text-neutral-400">Your cart is empty</p>
+                    <motion.button
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
                       onClick={closeCart}
-                      className="mt-6 px-6 py-3 bg-black text-white rounded-lg hover:bg-gray-800 transition-colors"
+                      className="mt-6 px-6 py-3 bg-indigo-600 hover:bg-indigo-700 dark:bg-indigo-500 dark:hover:bg-indigo-600 text-white rounded-lg transition-colors font-semibold"
                     >
                       Continue shopping
-                    </button>
+                    </motion.button>
                   </div>
                 ) : (
                   <div className="space-y-6">
@@ -67,7 +73,7 @@ export function CartDrawer() {
                         exit={{ opacity: 0, x: 100 }}
                         className="flex gap-4 pb-6 border-b"
                       >
-                        <div className="w-24 h-24 bg-gray-100 rounded-lg overflow-hidden flex-shrink-0">
+                        <div className="w-24 h-24 bg-neutral-200 dark:bg-neutral-700 rounded-lg overflow-hidden flex-shrink-0 border border-neutral-300 dark:border-neutral-600">
                           <img
                             src={item.image}
                             alt={item.productName}
@@ -77,18 +83,20 @@ export function CartDrawer() {
                         <div className="flex-1 min-w-0">
                           <div className="flex items-start justify-between gap-2 mb-2">
                             <div>
-                              <p className="text-sm text-gray-500">{item.brand}</p>
-                              <h3 className="truncate">{item.productName}</h3>
+                              <p className="text-xs text-neutral-500 dark:text-neutral-400">{item.brand}</p>
+                              <h3 className="text-sm font-semibold truncate text-neutral-900 dark:text-neutral-100">{item.productName}</h3>
                             </div>
-                            <button
+                            <motion.button
+                              whileHover={{ scale: 1.1 }}
+                              whileTap={{ scale: 0.9 }}
                               onClick={() => removeItem(item.variantId)}
-                              className="w-8 h-8 flex items-center justify-center rounded-lg hover:bg-gray-100 transition-colors text-gray-500 hover:text-red-600"
+                              className="w-8 h-8 flex items-center justify-center rounded-lg hover:bg-red-100 dark:hover:bg-red-900/30 transition-colors text-neutral-500 dark:text-neutral-400 hover:text-red-600 dark:hover:text-red-400"
                               aria-label="Remove item"
                             >
                               <Trash2 className="w-4 h-4" />
-                            </button>
+                            </motion.button>
                           </div>
-                          <p className="text-sm text-gray-500 mb-3">
+                          <p className="text-xs text-neutral-500 dark:text-neutral-400 mb-3">
                             {item.color} / Size {item.size}
                           </p>
                           <div className="flex items-center justify-between">
@@ -107,27 +115,29 @@ export function CartDrawer() {
               </div>
 
               {items.length > 0 && (
-                <div className="border-t p-6 space-y-4">
-                  <div className="space-y-2">
+                <div className="border-t border-neutral-200 dark:border-neutral-800 p-6 space-y-4 bg-neutral-50 dark:bg-neutral-800/30">
+                  <div className="space-y-3">
                     <div className="flex justify-between text-sm">
-                      <span className="text-gray-600">Subtotal</span>
-                      <span>${subtotal.toFixed(2)}</span>
+                      <span className="text-neutral-600 dark:text-neutral-400">Subtotal</span>
+                      <span className="text-neutral-900 dark:text-neutral-100">${subtotal.toFixed(2)}</span>
                     </div>
                     <div className="flex justify-between text-sm">
-                      <span className="text-gray-600">Shipping</span>
-                      <span>${shipping.toFixed(2)}</span>
+                      <span className="text-neutral-600 dark:text-neutral-400">Shipping</span>
+                      <span className="text-neutral-900 dark:text-neutral-100">${shipping.toFixed(2)}</span>
                     </div>
-                    <div className="flex justify-between pt-2 border-t">
-                      <span>Total</span>
-                      <span>${total.toFixed(2)}</span>
+                    <div className="flex justify-between pt-3 border-t border-neutral-200 dark:border-neutral-700">
+                      <span className="font-semibold text-neutral-900 dark:text-neutral-100">Total</span>
+                      <span className="font-bold text-lg text-indigo-600 dark:text-indigo-400">${total.toFixed(2)}</span>
                     </div>
                   </div>
-                  <button
+                  <motion.button
+                    whileHover={{ scale: 1.02 }}
+                    whileTap={{ scale: 0.98 }}
                     onClick={() => {
                       closeCart();
                       navigate('/checkout');
                     }}
-                    className="w-full py-4 bg-black text-white rounded-lg hover:bg-gray-800 transition-colors"
+                    className="w-full py-4 bg-indigo-600 hover:bg-indigo-700 dark:bg-indigo-500 dark:hover:bg-indigo-600 text-white rounded-lg transition-colors font-semibold shadow-lg hover:shadow-indigo-500/50"
                   >
                     Checkout
                   </button>

@@ -28,13 +28,18 @@ export function CategoryGrid({ onCategorySelect }: CategoryGridProps) {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: index * 0.05 }}
+            whileHover={{ scale: 1.08, y: -4 }}
+            whileTap={{ scale: 0.95 }}
             onClick={() => onCategorySelect?.(category.id)}
-            className="flex flex-col items-center gap-3 p-4 bg-white border border-gray-200 rounded-xl hover:border-black hover:shadow-lg transition-all group"
+            className="flex flex-col items-center gap-3 p-4 bg-white dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 rounded-xl hover:border-indigo-500 dark:hover:border-indigo-400 hover:shadow-lg hover:shadow-indigo-500/20 dark:hover:shadow-indigo-500/30 transition-all group backdrop-blur-sm"
           >
-            <div className="w-12 h-12 flex items-center justify-center rounded-full bg-gray-100 group-hover:bg-black group-hover:text-white transition-colors">
+            <motion.div
+              className="w-12 h-12 flex items-center justify-center rounded-full bg-gradient-to-br from-neutral-100 to-neutral-200 dark:from-neutral-700 dark:to-neutral-600 group-hover:from-indigo-500 group-hover:to-indigo-600 text-neutral-700 dark:text-neutral-300 group-hover:text-white transition-all group-hover:shadow-lg group-hover:shadow-indigo-500/50"
+              whileHover={{ rotate: 12 }}
+            >
               <Icon className="w-6 h-6" />
-            </div>
-            <span className="text-xs text-center">{category.name}</span>
+            </motion.div>
+            <span className="text-xs text-center font-medium text-neutral-700 dark:text-neutral-300 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors">{category.name}</span>
           </motion.button>
         );
       })}
