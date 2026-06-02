@@ -1,0 +1,187 @@
+[
+  {
+    "id": "1",
+    "slug": "cloud-runner-pro",
+    "name": "Cloud Runner Pro",
+    "brand": "Orivelle",
+    "description": "Experience unparalleled comfort with our flagship running shoe. Engineered with advanced cushioning technology and breathable mesh upper for maximum performance.",
+    "category": "Running Shoes",
+    "features": [
+      "CloudFoam™ midsole for superior cushioning",
+      "Breathable engineered mesh upper",
+      "Carbon fiber plate for energy return",
+      "Durable rubber outsole with flex grooves",
+      "Lightweight construction at 8.2oz"
+    ],
+    "variants": [
+      {
+        "id": "v1",
+        "color": "Midnight Blue",
+        "colorHex": "#1e3a8a",
+        "size": "8",
+        "price": 159.99,
+        "stock": 12,
+        "images": [
+          "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=800&q=80",
+          "https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?w=800&q=80",
+          "https://images.unsplash.com/photo-1608231387042-66d1773070a5?w=800&q=80",
+          "https://images.unsplash.com/photo-1600185365926-3a2ce3cdb9eb?w=800&q=80"
+        ]
+      },
+      {
+        "id": "v2",
+        "color": "Midnight Blue",
+        "colorHex": "#1e3a8a",
+        "size": "9",
+        "price": 159.99,
+        "stock": 8,
+        "images": [
+          "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=800&q=80",
+          "https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?w=800&q=80",
+          "https://images.unsplash.com/photo-1608231387042-66d1773070a5?w=800&q=80",
+          "https://images.unsplash.com/photo-1600185365926-3a2ce3cdb9eb?w=800&q=80"
+        ]
+      },
+      {
+        "id": "v3",
+        "color": "Midnight Blue",
+        "colorHex": "#1e3a8a",
+        "size": "10",
+        "price": 159.99,
+        "stock": 0,
+        "images": [
+          "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=800&q=80",
+          "https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?w=800&q=80",
+          "https://images.unsplash.com/photo-1608231387042-66d1773070a5?w=800&q=80",
+          "https://images.unsplash.com/photo-1600185365926-3a2ce3cdb9eb?w=800&q=80"
+        ]
+      },
+      {
+        "id": "v4",
+        "color": "Midnight Blue",
+        "colorHex": "#1e3a8a",
+        "size": "11",
+        "price": 159.99,
+        "stock": 15,
+        "images": [
+          "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=800&q=80",
+          "https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?w=800&q=80",
+          "https://images.unsplash.com/photo-1608231387042-66d1773070a5?w=800&q=80",
+          "https://images.unsplash.com/photo-1600185365926-3a2ce3cdb9eb?w=800&q=80"
+        ]
+      },
+      {
+        "id": "v5",
+        "color": "Solar Red",
+        "colorHex": "#dc2626",
+        "size": "8",
+        "price": 159.99,
+        "stock": 5,
+        "images": [
+          "https://images.unsplash.com/photo-1607522370275-f14206abe5d3?w=800&q=80",
+          "https://images.unsplash.com/photo-1605348532760-6753d2c43329?w=800&q=80",
+          "https://images.unsplash.com/photo-1584735175315-9d5df23860e6?w=800&q=80",
+          "https://images.unsplash.com/photo-1556906781-9a412961c28c?w=800&q=80"
+        ]
+      },
+      {
+        "id": "v6",
+        "color": "Solar Red",
+        "colorHex": "#dc2626",
+        "size": "9",
+        "price": 159.99,
+        "stock": 0,
+        "images": [
+          "https://images.unsplash.com/photo-1607522370275-f14206abe5d3?w=800&q=80",
+          "https://images.unsplash.com/photo-1605348532760-6753d2c43329?w=800&q=80",
+          "https://images.unsplash.com/photo-1584735175315-9d5df23860e6?w=800&q=80",
+          "https://images.unsplash.com/photo-1556906781-9a412961c28c?w=800&q=80"
+        ]
+      },
+      {
+        "id": "v7",
+        "color": "Solar Red",
+        "colorHex": "#dc2626",
+        "size": "10",
+        "price": 159.99,
+        "stock": 10,
+        "images": [
+          "https://images.unsplash.com/photo-1607522370275-f14206abe5d3?w=800&q=80",
+          "https://images.unsplash.com/photo-1605348532760-6753d2c43329?w=800&q=80",
+          "https://images.unsplash.com/photo-1584735175315-9d5df23860e6?w=800&q=80",
+          "https://images.unsplash.com/photo-1556906781-9a412961c28c?w=800&q=80"
+        ]
+      },
+      {
+        "id": "v8",
+        "color": "Solar Red",
+        "colorHex": "#dc2626",
+        "size": "11",
+        "price": 159.99,
+        "stock": 7,
+        "images": [
+          "https://images.unsplash.com/photo-1607522370275-f14206abe5d3?w=800&q=80",
+          "https://images.unsplash.com/photo-1605348532760-6753d2c43329?w=800&q=80",
+          "https://images.unsplash.com/photo-1584735175315-9d5df23860e6?w=800&q=80",
+          "https://images.unsplash.com/photo-1556906781-9a412961c28c?w=800&q=80"
+        ]
+      },
+      {
+        "id": "v9",
+        "color": "Arctic White",
+        "colorHex": "#f8fafc",
+        "size": "8",
+        "price": 159.99,
+        "stock": 20,
+        "images": [
+          "https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?w=800&q=80",
+          "https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?w=800&q=80",
+          "https://images.unsplash.com/photo-1603787081207-362bcef7f1ca?w=800&q=80",
+          "https://images.unsplash.com/photo-1460353581641-37baddab0fa2?w=800&q=80"
+        ]
+      },
+      {
+        "id": "v10",
+        "color": "Arctic White",
+        "colorHex": "#f8fafc",
+        "size": "9",
+        "price": 159.99,
+        "stock": 18,
+        "images": [
+          "https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?w=800&q=80",
+          "https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?w=800&q=80",
+          "https://images.unsplash.com/photo-1603787081207-362bcef7f1ca?w=800&q=80",
+          "https://images.unsplash.com/photo-1460353581641-37baddab0fa2?w=800&q=80"
+        ]
+      },
+      {
+        "id": "v11",
+        "color": "Arctic White",
+        "colorHex": "#f8fafc",
+        "size": "10",
+        "price": 159.99,
+        "stock": 0,
+        "images": [
+          "https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?w=800&q=80",
+          "https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?w=800&q=80",
+          "https://images.unsplash.com/photo-1603787081207-362bcef7f1ca?w=800&q=80",
+          "https://images.unsplash.com/photo-1460353581641-37baddab0fa2?w=800&q=80"
+        ]
+      },
+      {
+        "id": "v12",
+        "color": "Arctic White",
+        "colorHex": "#f8fafc",
+        "size": "11",
+        "price": 159.99,
+        "stock": 14,
+        "images": [
+          "https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?w=800&q=80",
+          "https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?w=800&q=80",
+          "https://images.unsplash.com/photo-1603787081207-362bcef7f1ca?w=800&q=80",
+          "https://images.unsplash.com/photo-1460353581641-37baddab0fa2?w=800&q=80"
+        ]
+      }
+    ]
+  }
+]

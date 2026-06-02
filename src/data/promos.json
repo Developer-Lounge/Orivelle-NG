@@ -1,0 +1,22 @@
+[
+  {
+    "id": "1",
+    "message": "🔥 Black Friday — 60% off everything",
+    "endDate": "2026-06-30T23:59:59",
+    "backgroundColor": "#dc2626",
+    "textColor": "#ffffff"
+  },
+  {
+    "id": "2",
+    "message": "Free delivery on orders over ₦20,000",
+    "backgroundColor": "#f59e0b",
+    "textColor": "#000000"
+  },
+  {
+    "id": "3",
+    "message": "⚡ Flash Sale: Up to 70% off Electronics",
+    "endDate": "2026-06-15T23:59:59",
+    "backgroundColor": "#7c3aed",
+    "textColor": "#ffffff"
+  }
+]

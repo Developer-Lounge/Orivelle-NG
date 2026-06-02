@@ -1,0 +1,34 @@
+[
+  {
+    "id": "1",
+    "title": "Summer Sale",
+    "subtitle": "Up to 70% off on all items",
+    "image": "https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?w=1200&q=80",
+    "ctaText": "Shop Now",
+    "ctaLink": "/"
+  },
+  {
+    "id": "2",
+    "title": "New Arrivals",
+    "subtitle": "Check out our latest collection",
+    "image": "https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=1200&q=80",
+    "ctaText": "Explore",
+    "ctaLink": "/"
+  },
+  {
+    "id": "3",
+    "title": "Electronics Deals",
+    "subtitle": "Premium tech at unbeatable prices",
+    "image": "https://images.unsplash.com/photo-1498049794561-7780e7231661?w=1200&q=80",
+    "ctaText": "View Deals",
+    "ctaLink": "/"
+  },
+  {
+    "id": "4",
+    "title": "Fashion Forward",
+    "subtitle": "Trending styles for everyone",
+    "image": "https://images.unsplash.com/photo-1445205170230-053b83016050?w=1200&q=80",
+    "ctaText": "Shop Fashion",
+    "ctaLink": "/"
+  }
+]

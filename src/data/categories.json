@@ -1,0 +1,42 @@
+[
+  {
+    "id": "electronics",
+    "name": "Electronics",
+    "icon": "Laptop"
+  },
+  {
+    "id": "fashion",
+    "name": "Fashion",
+    "icon": "Shirt"
+  },
+  {
+    "id": "beauty",
+    "name": "Beauty",
+    "icon": "Sparkles"
+  },
+  {
+    "id": "home",
+    "name": "Home & Kitchen",
+    "icon": "Home"
+  },
+  {
+    "id": "sports",
+    "name": "Sports",
+    "icon": "Dumbbell"
+  },
+  {
+    "id": "books",
+    "name": "Books",
+    "icon": "BookOpen"
+  },
+  {
+    "id": "toys",
+    "name": "Toys & Games",
+    "icon": "Gamepad2"
+  },
+  {
+    "id": "grocery",
+    "name": "Grocery",
+    "icon": "ShoppingBasket"
+  }
+]
