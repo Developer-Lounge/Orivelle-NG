@@ -62,7 +62,7 @@ export function AvatarDropdown() {
       <button
         type="button"
         onClick={() => setOpen((prev) => !prev)}
-        className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-black text-sm font-semibold text-white ring-1 ring-gray-200 transition hover:ring-gray-300"
+        className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-indigo-600 dark:bg-indigo-500 text-sm font-semibold text-white ring-1 ring-indigo-200 dark:ring-indigo-400/50 transition hover:ring-indigo-300 dark:hover:ring-indigo-300"
         aria-label="Open user menu"
       >
         {user.avatar ? (
@@ -79,16 +79,16 @@ export function AvatarDropdown() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
             transition={{ duration: 0.16 }}
-            className="absolute right-0 z-50 mt-2 w-72 overflow-hidden rounded-3xl border border-gray-200 bg-white shadow-2xl"
+            className="absolute right-0 z-50 mt-2 w-72 overflow-hidden rounded-2xl border border-neutral-200 dark:border-neutral-700 bg-white dark:bg-neutral-800 shadow-2xl dark:shadow-2xl backdrop-blur-sm"
           >
-            <div className="px-4 py-4 border-b border-gray-100">
-              <p className="text-sm font-semibold text-slate-900">{user.name}</p>
-              <p className="text-xs text-slate-500 truncate">{user.email}</p>
+            <div className="px-4 py-4 border-b border-neutral-200 dark:border-neutral-700 bg-neutral-50 dark:bg-neutral-900/50">
+              <p className="text-sm font-semibold text-neutral-900 dark:text-neutral-100">{user.name}</p>
+              <p className="text-xs text-neutral-500 dark:text-neutral-400 truncate">{user.email}</p>
             </div>
             <div className="flex flex-col p-2">
               <Link
                 to="/account/orders"
-                className="flex items-center gap-2 rounded-2xl px-4 py-3 text-sm text-slate-700 transition hover:bg-gray-50"
+                className="flex items-center gap-2 rounded-lg px-4 py-3 text-sm text-neutral-700 dark:text-neutral-300 transition hover:bg-neutral-100 dark:hover:bg-neutral-700/50"
                 onClick={() => setOpen(false)}
               >
                 <Package className="h-4 w-4" />
@@ -96,7 +96,7 @@ export function AvatarDropdown() {
               </Link>
               <Link
                 to="/account/notifications"
-                className="flex items-center justify-between gap-2 rounded-2xl px-4 py-3 text-sm text-slate-700 transition hover:bg-gray-50"
+                className="flex items-center justify-between gap-2 rounded-lg px-4 py-3 text-sm text-neutral-700 dark:text-neutral-300 transition hover:bg-neutral-100 dark:hover:bg-neutral-700/50"
                 onClick={() => setOpen(false)}
               >
                 <span className="flex items-center gap-2">
@@ -110,10 +110,10 @@ export function AvatarDropdown() {
                 )}
               </Link>
             </div>
-            <div className="border-t border-gray-100" />
+            <div className="border-t border-neutral-200 dark:border-neutral-700" />
             <button
               type="button"
-              className="flex w-full items-center gap-2 px-4 py-3 text-sm text-slate-700 transition hover:bg-gray-50"
+              className="flex w-full items-center gap-2 px-4 py-3 text-sm text-neutral-700 dark:text-neutral-300 transition hover:bg-neutral-100 dark:hover:bg-neutral-700/50"
               onClick={handleSignOut}
             >
               <LogOut className="h-4 w-4" />

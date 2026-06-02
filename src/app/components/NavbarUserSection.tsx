@@ -1,7 +1,7 @@
 "use client";
 
 import { Link } from 'react-router';
-import { Button } from './ui/button';
+import { motion } from 'motion/react';
 import { useAuthStore } from '../../store/authStore';
 import { AvatarDropdown } from './AvatarDropdown';
 
@@ -14,12 +14,30 @@ export function NavbarUserSection() {
         <AvatarDropdown />
       ) : (
         <div className="flex items-center gap-2">
-          <Button variant="ghost" size="sm" asChild>
-            <Link to="/auth/signup">Sign up</Link>
-          </Button>
-          <Button size="sm" asChild>
-            <Link to="/auth/signin">Log in</Link>
-          </Button>
+          <motion.button
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            asChild
+          >
+            <Link
+              to="/auth/signup"
+              className="px-4 py-2 rounded-lg text-sm font-semibold text-neutral-700 dark:text-neutral-300 hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors"
+            >
+              Sign up
+            </Link>
+          </motion.button>
+          <motion.button
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            asChild
+          >
+            <Link
+              to="/auth/signin"
+              className="px-4 py-2 rounded-lg text-sm font-semibold text-white bg-indigo-600 hover:bg-indigo-700 dark:bg-indigo-500 dark:hover:bg-indigo-600 transition-colors"
+            >
+              Log in
+            </Link>
+          </motion.button>
         </div>
       )}
     </div>

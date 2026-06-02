@@ -82,7 +82,7 @@ export function SearchBar() {
   return (
     <div ref={searchRef} className="relative flex-1 max-w-2xl">
       <div className="relative">
-        <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
+        <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-neutral-400 dark:text-neutral-500" />
         <input
           ref={inputRef}
           type="text"
@@ -91,15 +91,15 @@ export function SearchBar() {
           onKeyDown={handleKeyDown}
           onFocus={() => query.trim() && setIsOpen(true)}
           placeholder="Search for products, brands, or categories..."
-          className="w-full pl-10 pr-10 py-2.5 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-black focus:border-transparent"
+          className="w-full pl-10 pr-10 py-2.5 border border-neutral-200 dark:border-neutral-700 rounded-lg bg-white dark:bg-neutral-800 text-neutral-900 dark:text-neutral-100 placeholder-neutral-500 dark:placeholder-neutral-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 dark:focus:ring-indigo-400 focus:border-transparent transition-all"
         />
         {query && (
           <button
             onClick={handleClear}
-            className="absolute right-3 top-1/2 -translate-y-1/2 w-5 h-5 flex items-center justify-center hover:bg-gray-100 rounded-full transition-colors"
+            className="absolute right-3 top-1/2 -translate-y-1/2 w-5 h-5 flex items-center justify-center hover:bg-neutral-100 dark:hover:bg-neutral-700 rounded-full transition-colors"
             aria-label="Clear search"
           >
-            <X className="w-4 h-4 text-gray-400" />
+            <X className="w-4 h-4 text-neutral-400 dark:text-neutral-500" />
           </button>
         )}
       </div>
@@ -111,22 +111,24 @@ export function SearchBar() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
             transition={{ duration: 0.15 }}
-            className="absolute top-full mt-2 w-full bg-white border border-gray-200 rounded-lg shadow-xl z-50 overflow-hidden"
+            className="absolute top-full mt-2 w-full bg-white dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 rounded-lg shadow-xl dark:shadow-2xl z-50 overflow-hidden backdrop-blur-sm"
           >
             <div className="py-2">
               {results.map((product, index) => (
                 <Link
                   key={product.id}
                   to={`/product/${product.slug}`}
-                  className={`flex items-center gap-3 px-4 py-3 hover:bg-gray-50 transition-colors ${
-                    index === selectedIndex ? 'bg-gray-100' : ''
+                  className={`flex items-center gap-3 px-4 py-3 transition-colors ${
+                    index === selectedIndex
+                      ? 'bg-neutral-100 dark:bg-neutral-700'
+                      : 'hover:bg-neutral-50 dark:hover:bg-neutral-700/50'
                   }`}
                   onClick={() => {
                     setIsOpen(false);
                     setQuery('');
                   }}
                 >
-                  <div className="w-12 h-12 bg-gray-100 rounded overflow-hidden flex-shrink-0">
+                  <div className="w-12 h-12 bg-neutral-200 dark:bg-neutral-700 rounded overflow-hidden flex-shrink-0">
                     <img
                       src={product.variants[0].images[0]}
                       alt={product.name}
@@ -134,10 +136,10 @@ export function SearchBar() {
                     />
                   </div>
                   <div className="flex-1 min-w-0">
-                    <p className="text-sm truncate">{product.name}</p>
-                    <p className="text-xs text-gray-500">{product.category}</p>
+                    <p className="text-sm truncate text-neutral-900 dark:text-neutral-100">{product.name}</p>
+                    <p className="text-xs text-neutral-500 dark:text-neutral-400">{product.category}</p>
                   </div>
-                  <p className="text-sm">${product.variants[0].price}</p>
+                  <p className="text-sm text-neutral-900 dark:text-neutral-100">${product.variants[0].price}</p>
                 </Link>
               ))}
             </div>
