@@ -9,14 +9,7 @@ export function PromoBar() {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {
-    const dismissed = localStorage.getItem('promo-bar-dismissed');
-    if (dismissed === 'true') {
-      setIsDismissed(true);
-    }
-  }, []);
-
-  useEffect(() => {
-    if (isDismissed || promosData.length <= 1) return;
+    if (promosData.length <= 1 || isDismissed) return;
 
     const interval = setInterval(() => {
       setCurrentIndex((prev) => (prev + 1) % promosData.length);
@@ -27,7 +20,6 @@ export function PromoBar() {
 
   const handleDismiss = () => {
     setIsDismissed(true);
-    localStorage.setItem('promo-bar-dismissed', 'true');
   };
 
   if (isDismissed) return null;
@@ -35,13 +27,7 @@ export function PromoBar() {
   const currentPromo = promosData[currentIndex];
 
   return (
-    <div
-      className="relative overflow-hidden"
-      style={{
-        backgroundColor: currentPromo.backgroundColor,
-        color: currentPromo.textColor,
-      }}
-    >
+    <div className={`relative overflow-hidden z-20 ${currentPromo.backgroundClass} ${currentPromo.textClass}`}>
       <div className="max-w-7xl mx-auto px-4 py-2.5 flex items-center justify-between gap-4">
         <div className="flex-1 flex items-center justify-center gap-4">
           <AnimatePresence mode="wait">
@@ -71,10 +57,9 @@ export function PromoBar() {
           {promosData.map((_, index) => (
             <div
               key={index}
-              className={`h-0.5 transition-all ${
+              className={`h-0.5 transition-all bg-current ${
                 index === currentIndex ? 'w-4 opacity-100' : 'w-1.5 opacity-50'
               }`}
-              style={{ backgroundColor: currentPromo.textColor }}
             />
           ))}
         </div>

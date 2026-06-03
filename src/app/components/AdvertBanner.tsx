@@ -49,13 +49,12 @@ export function AdvertBanner() {
         <motion.div
           key={banner.id}
           initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          animate={{ opacity: 1, y: 0 }}
           transition={{ delay: index * 0.1 }}
         >
           <Link
             to={banner.ctaLink}
-            className="relative block h-64 rounded-2xl overflow-hidden group"
+            className="relative z-20 block h-64 rounded-2xl overflow-hidden group"
             style={{ backgroundColor: banner.backgroundColor }}
           >
             <img

@@ -20,6 +20,17 @@ export function HomePage() {
       <BackgroundDecorations />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-12 relative z-10">
         <motion.section
+          className="relative z-10"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+        >
+          <div className="flex items-end justify-between gap-4 mb-6">
+            <h2 className="text-2xl">Advertised Deals</h2>
+          </div>
+          <AdvertBanner />
+        </motion.section>
+
+        <motion.section
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
         >
@@ -54,14 +65,6 @@ export function HomePage() {
           viewport={{ once: true }}
         >
           <ProductGrid products={featuredProducts} title="Featured Products" />
-        </motion.section>
-
-        <motion.section
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-        >
-          <AdvertBanner />
         </motion.section>
 
         <motion.section
