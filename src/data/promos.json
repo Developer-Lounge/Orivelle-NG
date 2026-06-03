@@ -4,7 +4,7 @@
     "message": "🔥 Black Friday — 60% off everything",
     "endDate": "2026-06-30T23:59:59",
     "backgroundClass": "bg-red-600",
-    "textClass": "text-white"
+    "textClass": "text-black dark:text-white"
   },
   {
     "id": "2",
@@ -17,6 +17,6 @@
     "message": "⚡ Flash Sale: Up to 70% off Electronics",
     "endDate": "2026-06-15T23:59:59",
     "backgroundClass": "bg-violet-600",
-    "textClass": "text-white"
+    "textClass": "text-black dark:text-white"
   }
 ]
