@@ -70,6 +70,7 @@ export function RootLayout() {
       </motion.header>
       <Outlet />
       <CartDrawer />
+      {/* footer */}
       <footer className="relative z-10 bg-neutral-900 dark:bg-neutral-950 text-white mt-20 border-t border-neutral-700/50 dark:border-neutral-800/50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
           <div className="grid md:grid-cols-4 gap-8 mb-8">
@@ -91,9 +92,9 @@ export function RootLayout() {
             >
               <h4 className="font-semibold mb-4 text-white">Shop</h4>
               <ul className="space-y-2 text-sm text-neutral-300">
-                <li><Link to="/" className="hover:text-indigo-300 transition-colors">All Products</Link></li>
-                <li><Link to="/" className="hover:text-indigo-300 transition-colors">Flash Sales</Link></li>
-                <li><Link to="/" className="hover:text-indigo-300 transition-colors">New Arrivals</Link></li>
+                <li><Link to="/products" className="hover:text-indigo-300 transition-colors">All Products</Link></li>
+                <li><Link to="/flash-sales" className="hover:text-indigo-300 transition-colors">Flash Sales</Link></li>
+                <li><Link to="/new-arrivals" className="hover:text-indigo-300 transition-colors">New Arrivals</Link></li>
               </ul>
             </motion.div>
             <motion.div
@@ -104,9 +105,9 @@ export function RootLayout() {
             >
               <h4 className="font-semibold mb-4 text-white">Support</h4>
               <ul className="space-y-2 text-sm text-neutral-300">
-                <li><Link to="/" className="hover:text-indigo-300 transition-colors">Help Center</Link></li>
-                <li><Link to="/" className="hover:text-indigo-300 transition-colors">Track Order</Link></li>
-                <li><Link to="/" className="hover:text-indigo-300 transition-colors">Returns</Link></li>
+                <li><Link to="/help-center" className="hover:text-indigo-300 transition-colors">Help Center</Link></li>
+                <li><Link to="/track-order" className="hover:text-indigo-300 transition-colors">Track Order</Link></li>
+                <li><Link to="/returns" className="hover:text-indigo-300 transition-colors">Returns</Link></li>
               </ul>
             </motion.div>
             <motion.div

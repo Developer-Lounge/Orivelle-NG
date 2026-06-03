@@ -17,6 +17,9 @@ export interface Product {
   category: string;
   variants: Variant[];
   features: string[];
+  isNew?: boolean;
+  isFlashSale?: boolean;
+  originalPrice?: number;
 }
 
 export interface CartItem {

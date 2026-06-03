@@ -5,7 +5,9 @@
     "name": "Cloud Runner Pro",
     "brand": "Orivelle",
     "description": "Experience unparalleled comfort with our flagship running shoe. Engineered with advanced cushioning technology and breathable mesh upper for maximum performance.",
-    "category": "Running Shoes",
+    "category": "Sports",
+    "isNew": false,
+    "isFlashSale": false,
     "features": [
       "CloudFoam™ midsole for superior cushioning",
       "Breathable engineered mesh upper",
@@ -36,42 +38,11 @@
         "price": 159.99,
         "stock": 8,
         "images": [
-          "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=800&q=80",
-          "https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?w=800&q=80",
-          "https://images.unsplash.com/photo-1608231387042-66d1773070a5?w=800&q=80",
-          "https://images.unsplash.com/photo-1600185365926-3a2ce3cdb9eb?w=800&q=80"
+          "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=800&q=80"
         ]
       },
       {
         "id": "v3",
-        "color": "Midnight Blue",
-        "colorHex": "#1e3a8a",
-        "size": "10",
-        "price": 159.99,
-        "stock": 0,
-        "images": [
-          "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=800&q=80",
-          "https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?w=800&q=80",
-          "https://images.unsplash.com/photo-1608231387042-66d1773070a5?w=800&q=80",
-          "https://images.unsplash.com/photo-1600185365926-3a2ce3cdb9eb?w=800&q=80"
-        ]
-      },
-      {
-        "id": "v4",
-        "color": "Midnight Blue",
-        "colorHex": "#1e3a8a",
-        "size": "11",
-        "price": 159.99,
-        "stock": 15,
-        "images": [
-          "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=800&q=80",
-          "https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?w=800&q=80",
-          "https://images.unsplash.com/photo-1608231387042-66d1773070a5?w=800&q=80",
-          "https://images.unsplash.com/photo-1600185365926-3a2ce3cdb9eb?w=800&q=80"
-        ]
-      },
-      {
-        "id": "v5",
         "color": "Solar Red",
         "colorHex": "#dc2626",
         "size": "8",
@@ -79,107 +50,274 @@
         "stock": 5,
         "images": [
           "https://images.unsplash.com/photo-1607522370275-f14206abe5d3?w=800&q=80",
-          "https://images.unsplash.com/photo-1605348532760-6753d2c43329?w=800&q=80",
-          "https://images.unsplash.com/photo-1584735175315-9d5df23860e6?w=800&q=80",
-          "https://images.unsplash.com/photo-1556906781-9a412961c28c?w=800&q=80"
+          "https://images.unsplash.com/photo-1605348532760-6753d2c43329?w=800&q=80"
         ]
       },
       {
-        "id": "v6",
-        "color": "Solar Red",
-        "colorHex": "#dc2626",
-        "size": "9",
-        "price": 159.99,
-        "stock": 0,
-        "images": [
-          "https://images.unsplash.com/photo-1607522370275-f14206abe5d3?w=800&q=80",
-          "https://images.unsplash.com/photo-1605348532760-6753d2c43329?w=800&q=80",
-          "https://images.unsplash.com/photo-1584735175315-9d5df23860e6?w=800&q=80",
-          "https://images.unsplash.com/photo-1556906781-9a412961c28c?w=800&q=80"
-        ]
-      },
-      {
-        "id": "v7",
-        "color": "Solar Red",
-        "colorHex": "#dc2626",
-        "size": "10",
-        "price": 159.99,
-        "stock": 10,
-        "images": [
-          "https://images.unsplash.com/photo-1607522370275-f14206abe5d3?w=800&q=80",
-          "https://images.unsplash.com/photo-1605348532760-6753d2c43329?w=800&q=80",
-          "https://images.unsplash.com/photo-1584735175315-9d5df23860e6?w=800&q=80",
-          "https://images.unsplash.com/photo-1556906781-9a412961c28c?w=800&q=80"
-        ]
-      },
-      {
-        "id": "v8",
-        "color": "Solar Red",
-        "colorHex": "#dc2626",
-        "size": "11",
-        "price": 159.99,
-        "stock": 7,
-        "images": [
-          "https://images.unsplash.com/photo-1607522370275-f14206abe5d3?w=800&q=80",
-          "https://images.unsplash.com/photo-1605348532760-6753d2c43329?w=800&q=80",
-          "https://images.unsplash.com/photo-1584735175315-9d5df23860e6?w=800&q=80",
-          "https://images.unsplash.com/photo-1556906781-9a412961c28c?w=800&q=80"
-        ]
-      },
-      {
-        "id": "v9",
+        "id": "v4",
         "color": "Arctic White",
         "colorHex": "#f8fafc",
-        "size": "8",
+        "size": "9",
         "price": 159.99,
         "stock": 20,
         "images": [
           "https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?w=800&q=80",
-          "https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?w=800&q=80",
-          "https://images.unsplash.com/photo-1603787081207-362bcef7f1ca?w=800&q=80",
-          "https://images.unsplash.com/photo-1460353581641-37baddab0fa2?w=800&q=80"
+          "https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?w=800&q=80"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "2",
+    "slug": "aerosound-elite",
+    "name": "AeroSound Elite",
+    "brand": "Sonique",
+    "description": "Immerse yourself in pure sound with AeroSound Elite. Advanced hybrid active noise cancellation blocks external noise while custom-tuned 40mm drivers deliver rich, detailed audio.",
+    "category": "Electronics",
+    "isNew": true,
+    "isFlashSale": false,
+    "features": [
+      "Hybrid Active Noise Cancellation (up to 40dB)",
+      "Custom-tuned 40mm dynamic drivers",
+      "Up to 45 hours of battery life with ANC on",
+      "Ultra-soft memory foam earcups",
+      "Hi-Res Audio certified with LDAC support"
+    ],
+    "variants": [
+      {
+        "id": "v2-1",
+        "color": "Matte Black",
+        "colorHex": "#171717",
+        "size": "One Size",
+        "price": 249.99,
+        "stock": 15,
+        "images": [
+          "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=800&q=80",
+          "https://images.unsplash.com/photo-1484704849700-f032a568e944?w=800&q=80"
         ]
       },
       {
-        "id": "v10",
-        "color": "Arctic White",
-        "colorHex": "#f8fafc",
-        "size": "9",
-        "price": 159.99,
+        "id": "v2-2",
+        "color": "Platinum Silver",
+        "colorHex": "#cbd5e1",
+        "size": "One Size",
+        "price": 249.99,
+        "stock": 7,
+        "images": [
+          "https://images.unsplash.com/photo-1546435770-a3e426bf472b?w=800&q=80",
+          "https://images.unsplash.com/photo-1583394838336-acd977736f90?w=800&q=80"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "3",
+    "slug": "chrono-lux-smartwatch",
+    "name": "Chrono Lux Smartwatch",
+    "brand": "Chronos",
+    "description": "Stay connected and monitor your wellness with Chrono Lux. Features a brilliant Always-On AMOLED display, comprehensive heart rate & SpO2 tracking, and up to 7 days of battery life.",
+    "category": "Electronics",
+    "isNew": false,
+    "isFlashSale": true,
+    "originalPrice": 299.99,
+    "features": [
+      "1.43-inch Always-On AMOLED display",
+      "24/7 Heart rate, SpO2, and stress monitoring",
+      "Over 100 sports tracking modes",
+      "5ATM water resistance rating",
+      "Built-in GPS and Bluetooth calling"
+    ],
+    "variants": [
+      {
+        "id": "v3-1",
+        "color": "Space Gray",
+        "colorHex": "#4b5563",
+        "size": "44mm",
+        "price": 194.99,
+        "stock": 8,
+        "images": [
+          "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=800&q=80",
+          "https://images.unsplash.com/photo-1508685096489-7aacd43bd3b1?w=800&q=80"
+        ]
+      },
+      {
+        "id": "v3-2",
+        "color": "Rose Gold",
+        "colorHex": "#fda4af",
+        "size": "40mm",
+        "price": 194.99,
+        "stock": 10,
+        "images": [
+          "https://images.unsplash.com/photo-1542496658-e33a6d0d50f6?w=800&q=80",
+          "https://images.unsplash.com/photo-1434494878577-86c23bcb06b9?w=800&q=80"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "4",
+    "slug": "urban-knit-hoodie",
+    "name": "Urban Knit Hoodie",
+    "brand": "ThreadCo",
+    "description": "Crafted from 100% heavy organic cotton, the Urban Knit Hoodie offers a structured drape and unmatched softness. Features dropped shoulders, a double-lined hood, and a spacious kangaroo pocket.",
+    "category": "Fashion",
+    "isNew": false,
+    "isFlashSale": false,
+    "features": [
+      "450gsm 100% organic cotton French Terry",
+      "Pre-shrunk and garment dyed for vintage feel",
+      "Double-layered hood without drawstrings for clean aesthetic",
+      "Ribbed cuffs and waistband with spandex",
+      "Ethically manufactured in Portugal"
+    ],
+    "variants": [
+      {
+        "id": "v4-1",
+        "color": "Desert Sand",
+        "colorHex": "#d7c49e",
+        "size": "M",
+        "price": 79.99,
         "stock": 18,
         "images": [
-          "https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?w=800&q=80",
-          "https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?w=800&q=80",
-          "https://images.unsplash.com/photo-1603787081207-362bcef7f1ca?w=800&q=80",
-          "https://images.unsplash.com/photo-1460353581641-37baddab0fa2?w=800&q=80"
+          "https://images.unsplash.com/photo-1556821840-3a63f95609a7?w=800&q=80",
+          "https://images.unsplash.com/photo-1620799140408-edc6dcb6d633?w=800&q=80"
         ]
       },
       {
-        "id": "v11",
-        "color": "Arctic White",
-        "colorHex": "#f8fafc",
-        "size": "10",
-        "price": 159.99,
-        "stock": 0,
-        "images": [
-          "https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?w=800&q=80",
-          "https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?w=800&q=80",
-          "https://images.unsplash.com/photo-1603787081207-362bcef7f1ca?w=800&q=80",
-          "https://images.unsplash.com/photo-1460353581641-37baddab0fa2?w=800&q=80"
-        ]
-      },
-      {
-        "id": "v12",
-        "color": "Arctic White",
-        "colorHex": "#f8fafc",
-        "size": "11",
-        "price": 159.99,
+        "id": "v4-2",
+        "color": "Olive Green",
+        "colorHex": "#3f6212",
+        "size": "L",
+        "price": 79.99,
         "stock": 14,
         "images": [
-          "https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?w=800&q=80",
-          "https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?w=800&q=80",
-          "https://images.unsplash.com/photo-1603787081207-362bcef7f1ca?w=800&q=80",
-          "https://images.unsplash.com/photo-1460353581641-37baddab0fa2?w=800&q=80"
+          "https://images.unsplash.com/photo-1556821840-416f01e15eab?w=800&q=80",
+          "https://images.unsplash.com/photo-1517841905240-472988babdf9?w=800&q=80"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "5",
+    "slug": "glow-essence-serum",
+    "name": "Glow Essence Serum",
+    "brand": "Luminate",
+    "description": "Unveil your skin's natural radiance with Glow Essence. Formulated with 10% Vitamin C, 2% Niacinamide, and Hyaluronic Acid, it targets dark spots, uneven tone, and fine lines.",
+    "category": "Beauty",
+    "isNew": true,
+    "isFlashSale": false,
+    "features": [
+      "10% Stable L-Ascorbic Acid (Vitamin C)",
+      "Hydrating triple-weight Hyaluronic Acid",
+      "Niacinamide to strengthen skin barrier",
+      "Fragrance-free and vegan formula",
+      "Dermatologist tested for sensitive skin"
+    ],
+    "variants": [
+      {
+        "id": "v5-1",
+        "color": "Amber Glass",
+        "colorHex": "#78350f",
+        "size": "30ml",
+        "price": 45.00,
+        "stock": 25,
+        "images": [
+          "https://images.unsplash.com/photo-1620916566398-39f1143ab7be?w=800&q=80",
+          "https://images.unsplash.com/photo-1608248597279-f99d160bfcbc?w=800&q=80"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "6",
+    "slug": "chefs-choice-knife-set",
+    "name": "Chef's Choice Knife Set",
+    "brand": "Culina",
+    "description": "Elevate your culinary skills with this premium 3-piece knife set. Precision-forged from high-carbon German steel, these knives deliver exceptional sharpness, balance, and edge retention.",
+    "category": "Home & Kitchen",
+    "isNew": false,
+    "isFlashSale": true,
+    "originalPrice": 199.99,
+    "features": [
+      "Precision-forged German high-carbon steel",
+      "Full tang construction with ergonomic Pakkawood handles",
+      "Includes 8\" Chef Knife, 5\" Utility Knife, 3.5\" Paring Knife",
+      "Hand-polished 15-degree double-bevel edge",
+      "Includes premium wooden storage block"
+    ],
+    "variants": [
+      {
+        "id": "v6-1",
+        "color": "Walnut wood",
+        "colorHex": "#5c4033",
+        "size": "3-Piece",
+        "price": 129.99,
+        "stock": 6,
+        "images": [
+          "https://images.unsplash.com/photo-1599689017968-45952aba7f3e?w=800&q=80",
+          "https://images.unsplash.com/photo-1606813907291-d86efa9b94db?w=800&q=80"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "7",
+    "slug": "epic-quest-board-game",
+    "name": "Epic Quest RPG Board Game",
+    "brand": "QuestMaker",
+    "description": "Embark on an unforgettable adventure in the fantasy realm. A cooperative, legacy-style board game for 1-4 players featuring branching storylines, custom miniatures, and deep tactical combat.",
+    "category": "Toys & Games",
+    "isNew": true,
+    "isFlashSale": false,
+    "features": [
+      "Fully cooperative campaign with over 20 unique scenarios",
+      "Includes 18 highly-detailed resin hero miniatures",
+      "Branching narrative decisions with persistent choices",
+      "Double-sided modular tiles for endless map combinations",
+      "Designed for 1-4 players, ages 14+"
+    ],
+    "variants": [
+      {
+        "id": "v7-1",
+        "color": "Collector's Edition",
+        "colorHex": "#8b5cf6",
+        "size": "Standard Box",
+        "price": 49.99,
+        "stock": 20,
+        "images": [
+          "https://images.unsplash.com/photo-1610890716171-6b1bb98ffd09?w=800&q=80",
+          "https://images.unsplash.com/photo-1606500749486-6382415d8f88?w=800&q=80"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "8",
+    "slug": "organic-matcha-powder",
+    "name": "Organic Matcha Powder",
+    "brand": "Midori",
+    "description": "Sourced directly from Uji, Japan, our ceremonial grade matcha powder is stone-ground from the finest shade-grown green tea leaves. Boasts a vibrant emerald green color and smooth umami taste.",
+    "category": "Grocery",
+    "isNew": false,
+    "isFlashSale": false,
+    "features": [
+      "100% Organic USDA Certified ceremonial grade matcha",
+      "Stone-ground in small batches in Kyoto, Japan",
+      "Rich in L-Theanine and powerful antioxidants",
+      "Resealable pouch to preserve freshness",
+      "Perfect for traditional tea preparation or matcha lattes"
+    ],
+    "variants": [
+      {
+        "id": "v8-1",
+        "color": "Emerald Green",
+        "colorHex": "#15803d",
+        "size": "100g Pouch",
+        "price": 29.99,
+        "stock": 40,
+        "images": [
+          "https://images.unsplash.com/photo-1536256263959-770b48d82b0a?w=800&q=80",
+          "https://images.unsplash.com/photo-1582731244158-a027161ad8f4?w=800&q=80"
         ]
       }
     ]

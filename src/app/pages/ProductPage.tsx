@@ -1,5 +1,6 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Heart, Share2, Shield, Truck, RotateCcw, ShoppingCart } from 'lucide-react';
+import { useParams } from 'react-router';
 import { BackgroundDecorations } from '../components/BackgroundDecorations';
 import { ImageGallery } from '../components/ImageGallery';
 import { VariantSelector } from '../components/VariantSelector';
@@ -9,12 +10,18 @@ import { Variant } from '../../types/product';
 import productsData from '../../data/products.json';
 
 export function ProductPage() {
-  // TODO: Replace with useParams() to get slug from URL and fetch product by slug
-  const product = productsData[0];
+  const { slug } = useParams<{ slug: string }>();
+  const product = productsData.find((p) => p.slug === slug) || productsData[0];
+
   const [selectedVariant, setSelectedVariant] = useState<Variant>(
     product.variants.find((v) => v.stock > 0) || product.variants[0]
   );
   const [quantity, setQuantity] = useState(1);
+
+  useEffect(() => {
+    setSelectedVariant(product.variants.find((v) => v.stock > 0) || product.variants[0]);
+    setQuantity(1);
+  }, [product]);
 
   const { addItem } = useCartStore();
 
