@@ -1,7 +1,8 @@
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router';
-import { z } from 'zod';
+import { z, ZodIssue } from 'zod';
 import { Eye, EyeOff } from 'lucide-react';
+import { BackgroundDecorations } from '../../components/BackgroundDecorations';
 import { useAuthStore } from '../../../store/authStore';
 
 const signUpSchema = z.object({
@@ -61,7 +62,7 @@ export function SignUpPage() {
     } catch (error) {
       if (error instanceof z.ZodError) {
         const fieldErrors: Partial<Record<keyof SignUpFormData, string>> = {};
-        error.errors.forEach((err) => {
+        error.issues.forEach((err: ZodIssue) => {
           if (err.path[0]) {
             fieldErrors[err.path[0] as keyof SignUpFormData] = err.message;
           }
@@ -79,16 +80,17 @@ export function SignUpPage() {
   };
 
   return (
-    <div className="min-h-[calc(100vh-4rem)] flex items-center justify-center py-12 px-4">
-      <div className="w-full max-w-md">
+    <div className="min-h-[calc(100vh-4rem)] flex items-center justify-center py-12 px-4 relative bg-white dark:bg-neutral-900">
+      <BackgroundDecorations />
+      <div className="w-full max-w-md relative z-10">
         <div className="text-center mb-8">
-          <h1 className="text-3xl mb-2">Create Account</h1>
-          <p className="text-gray-600">Sign up to get started</p>
+          <h1 className="text-3xl mb-2 text-neutral-900 dark:text-neutral-100 font-display">Create Account</h1>
+          <p className="text-neutral-600 dark:text-neutral-400">Sign up to get started</p>
         </div>
 
-        <form onSubmit={handleSubmit} className="bg-white border border-gray-200 rounded-2xl p-8 space-y-6">
+        <form onSubmit={handleSubmit} className="bg-white dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 rounded-2xl p-8 space-y-6 backdrop-blur-sm">
           <div>
-            <label htmlFor="fullName" className="block text-sm mb-2">
+            <label htmlFor="fullName" className="block text-sm mb-2 font-medium text-neutral-700 dark:text-neutral-300">
               Full Name
             </label>
             <input
@@ -96,18 +98,18 @@ export function SignUpPage() {
               type="text"
               value={formData.fullName}
               onChange={(e) => handleChange('fullName', e.target.value)}
-              className={`w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-black ${
-                errors.fullName ? 'border-red-500' : 'border-gray-300'
+              className={`w-full px-4 py-3 border rounded-lg bg-white dark:bg-neutral-700 text-neutral-900 dark:text-neutral-100 focus:outline-none focus:ring-2 focus:ring-indigo-500 dark:focus:ring-indigo-400 ${
+                errors.fullName ? 'border-red-500 dark:border-red-400' : 'border-neutral-300 dark:border-neutral-600'
               }`}
               placeholder="John Doe"
             />
             {errors.fullName && (
-              <p className="mt-1 text-sm text-red-600">{errors.fullName}</p>
+              <p className="mt-1 text-sm text-red-600 dark:text-red-400">{errors.fullName}</p>
             )}
           </div>
 
           <div>
-            <label htmlFor="email" className="block text-sm mb-2">
+            <label htmlFor="email" className="block text-sm mb-2 font-medium text-neutral-700 dark:text-neutral-300">
               Email
             </label>
             <input
@@ -115,18 +117,18 @@ export function SignUpPage() {
               type="email"
               value={formData.email}
               onChange={(e) => handleChange('email', e.target.value)}
-              className={`w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-black ${
-                errors.email ? 'border-red-500' : 'border-gray-300'
+              className={`w-full px-4 py-3 border rounded-lg bg-white dark:bg-neutral-700 text-neutral-900 dark:text-neutral-100 focus:outline-none focus:ring-2 focus:ring-indigo-500 dark:focus:ring-indigo-400 ${
+                errors.email ? 'border-red-500 dark:border-red-400' : 'border-neutral-300 dark:border-neutral-600'
               }`}
               placeholder="you@example.com"
             />
             {errors.email && (
-              <p className="mt-1 text-sm text-red-600">{errors.email}</p>
+              <p className="mt-1 text-sm text-red-600 dark:text-red-400">{errors.email}</p>
             )}
           </div>
 
           <div>
-            <label htmlFor="phone" className="block text-sm mb-2">
+            <label htmlFor="phone" className="block text-sm mb-2 font-medium text-neutral-700 dark:text-neutral-300">
               Phone Number
             </label>
             <input
@@ -134,18 +136,18 @@ export function SignUpPage() {
               type="tel"
               value={formData.phone}
               onChange={(e) => handleChange('phone', e.target.value)}
-              className={`w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-black ${
-                errors.phone ? 'border-red-500' : 'border-gray-300'
+              className={`w-full px-4 py-3 border rounded-lg bg-white dark:bg-neutral-700 text-neutral-900 dark:text-neutral-100 focus:outline-none focus:ring-2 focus:ring-indigo-500 dark:focus:ring-indigo-400 ${
+                errors.phone ? 'border-red-500 dark:border-red-400' : 'border-neutral-300 dark:border-neutral-600'
               }`}
               placeholder="+234 800 000 0000"
             />
             {errors.phone && (
-              <p className="mt-1 text-sm text-red-600">{errors.phone}</p>
+              <p className="mt-1 text-sm text-red-600 dark:text-red-400">{errors.phone}</p>
             )}
           </div>
 
           <div>
-            <label htmlFor="password" className="block text-sm mb-2">
+            <label htmlFor="password" className="block text-sm mb-2 font-medium text-neutral-700 dark:text-neutral-300">
               Password
             </label>
             <div className="relative">
@@ -154,36 +156,36 @@ export function SignUpPage() {
                 type={showPassword ? 'text' : 'password'}
                 value={formData.password}
                 onChange={(e) => handleChange('password', e.target.value)}
-                className={`w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-black ${
-                  errors.password ? 'border-red-500' : 'border-gray-300'
+                className={`w-full px-4 py-3 border rounded-lg bg-white dark:bg-neutral-700 text-neutral-900 dark:text-neutral-100 focus:outline-none focus:ring-2 focus:ring-indigo-500 dark:focus:ring-indigo-400 ${
+                  errors.password ? 'border-red-500 dark:border-red-400' : 'border-neutral-300 dark:border-neutral-600'
                 }`}
                 placeholder="••••••••"
               />
               <button
                 type="button"
                 onClick={() => setShowPassword(!showPassword)}
-                className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500"
+                className="absolute right-3 top-1/2 -translate-y-1/2 text-neutral-500 dark:text-neutral-400"
               >
                 {showPassword ? <EyeOff className="w-5 h-5" /> : <Eye className="w-5 h-5" />}
               </button>
             </div>
             {formData.password && (
               <div className="mt-2">
-                <div className="h-1 w-full bg-gray-200 rounded-full overflow-hidden">
+                <div className="h-1 w-full bg-neutral-300 dark:bg-neutral-600 rounded-full overflow-hidden">
                   <div className={`h-full ${passwordStrength.color} ${passwordStrength.widthClass} transition-all`} />
                 </div>
-                <p className="text-xs text-gray-600 mt-1">
+                <p className="text-xs text-neutral-600 dark:text-neutral-400 mt-1">
                   Password strength: {passwordStrength.strength}
                 </p>
               </div>
             )}
             {errors.password && (
-              <p className="mt-1 text-sm text-red-600">{errors.password}</p>
+              <p className="mt-1 text-sm text-red-600 dark:text-red-400">{errors.password}</p>
             )}
           </div>
 
           <div>
-            <label htmlFor="confirmPassword" className="block text-sm mb-2">
+            <label htmlFor="confirmPassword" className="block text-sm mb-2 font-medium text-neutral-700 dark:text-neutral-300">
               Confirm Password
             </label>
             <div className="relative">
@@ -192,34 +194,34 @@ export function SignUpPage() {
                 type={showConfirmPassword ? 'text' : 'password'}
                 value={formData.confirmPassword}
                 onChange={(e) => handleChange('confirmPassword', e.target.value)}
-                className={`w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-black ${
-                  errors.confirmPassword ? 'border-red-500' : 'border-gray-300'
+                className={`w-full px-4 py-3 border rounded-lg bg-white dark:bg-neutral-700 text-neutral-900 dark:text-neutral-100 focus:outline-none focus:ring-2 focus:ring-indigo-500 dark:focus:ring-indigo-400 ${
+                  errors.confirmPassword ? 'border-red-500 dark:border-red-400' : 'border-neutral-300 dark:border-neutral-600'
                 }`}
                 placeholder="••••••••"
               />
               <button
                 type="button"
                 onClick={() => setShowConfirmPassword(!showConfirmPassword)}
-                className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500"
+                className="absolute right-3 top-1/2 -translate-y-1/2 text-neutral-500 dark:text-neutral-400"
               >
                 {showConfirmPassword ? <EyeOff className="w-5 h-5" /> : <Eye className="w-5 h-5" />}
               </button>
             </div>
             {errors.confirmPassword && (
-              <p className="mt-1 text-sm text-red-600">{errors.confirmPassword}</p>
+              <p className="mt-1 text-sm text-red-600 dark:text-red-400">{errors.confirmPassword}</p>
             )}
           </div>
 
           <button
             type="submit"
-            className="w-full py-3 bg-black text-white rounded-lg hover:bg-gray-800 transition-colors"
+            className="w-full py-3 bg-indigo-600 hover:bg-indigo-700 dark:bg-indigo-500 dark:hover:bg-indigo-600 text-white rounded-lg transition-colors font-semibold shadow-lg hover:shadow-indigo-500/50"
           >
             Create Account
           </button>
 
-          <p className="text-center text-sm text-gray-600">
+          <p className="text-center text-sm text-neutral-600 dark:text-neutral-400">
             Already have an account?{' '}
-            <Link to="/auth/signin" className="text-black hover:underline">
+            <Link to="/auth/signin" className="text-indigo-600 dark:text-indigo-400 hover:text-indigo-700 dark:hover:text-indigo-300 transition-colors font-semibold">
               Sign in
             </Link>
           </p>

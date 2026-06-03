@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Heart, Share2, Shield, Truck, RotateCcw, ShoppingCart } from 'lucide-react';
+import { BackgroundDecorations } from '../components/BackgroundDecorations';
 import { ImageGallery } from '../components/ImageGallery';
 import { VariantSelector } from '../components/VariantSelector';
 import { QuantityInput } from '../components/QuantityInput';
@@ -31,8 +32,9 @@ export function ProductPage() {
   };
 
   return (
-    <div className="bg-white dark:bg-neutral-900 transition-colors duration-300">
-      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 lg:py-12">
+    <div className="bg-white dark:bg-neutral-900 transition-colors duration-300 min-h-screen relative">
+      <BackgroundDecorations />
+      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 lg:py-12 relative z-10">
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-12">
           <div>
             <ImageGallery

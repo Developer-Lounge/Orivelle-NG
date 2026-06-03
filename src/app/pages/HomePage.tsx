@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { motion } from 'motion/react';
+import { BackgroundDecorations } from '../components/BackgroundDecorations';
 import { HeroCarousel } from '../components/HeroCarousel';
 import { CategoryGrid } from '../components/CategoryGrid';
 import { ProductGrid } from '../components/ProductGrid';
@@ -15,8 +16,9 @@ export function HomePage() {
   const moreProducts = productsData;
 
   return (
-    <div className="min-h-screen">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-12">
+    <div className="min-h-screen relative">
+      <BackgroundDecorations />
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-12 relative z-10">
         <motion.section
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}

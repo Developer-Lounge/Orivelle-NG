@@ -1,7 +1,8 @@
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router';
-import { z } from 'zod';
+import { z, ZodIssue } from 'zod';
 import { Trash2, CreditCard } from 'lucide-react';
+import { BackgroundDecorations } from '../components/BackgroundDecorations';
 import { useAuthStore } from '../../store/authStore';
 import { useCartStore } from '../../store/cartStore';
 import { QuantityInput } from '../components/QuantityInput';
@@ -17,9 +18,7 @@ const checkoutSchema = z.object({
   postalCode: z.string().min(5, 'Postal code is required'),
   saveAddress: z.boolean().optional(),
   discountCode: z.string().optional(),
-  paymentMethod: z.enum(['paystack', 'flutterwave', 'cod'], {
-    errorMap: () => ({ message: 'Please select a payment method' }),
-  }),
+  paymentMethod: z.union([z.literal('paystack'), z.literal('flutterwave'), z.literal('cod')]),
 });
 
 type CheckoutFormData = z.infer<typeof checkoutSchema>;
@@ -117,7 +116,7 @@ export function CheckoutPage() {
     } catch (error) {
       if (error instanceof z.ZodError) {
         const fieldErrors: Partial<Record<keyof CheckoutFormData, string>> = {};
-        error.errors.forEach((err) => {
+        error.issues.forEach((err: ZodIssue) => {
           if (err.path[0]) {
             fieldErrors[err.path[0] as keyof CheckoutFormData] = err.message;
           }

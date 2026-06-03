@@ -70,6 +70,24 @@
   color-scheme: dark;
 }
 
+/* Background Patterns */
+.bg-grid-pattern {
+  background-image:
+    linear-gradient(to right, #e5e7eb 1px, transparent 1px),
+    linear-gradient(to bottom, #e5e7eb 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+.dark .bg-grid-pattern {
+  background-image:
+    linear-gradient(to right, #374151 1px, transparent 1px),
+    linear-gradient(to bottom, #374151 1px, transparent 1px);
+}
+
+.bg-radial-gradient {
+  background-image: radial-gradient(ellipse at center, var(--tw-gradient-stops));
+}
+
 html {
   scroll-behavior: smooth;
 }

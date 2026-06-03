@@ -1,7 +1,8 @@
 import { useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router';
-import { z } from 'zod';
+import { z, ZodIssue } from 'zod';
 import { Eye, EyeOff } from 'lucide-react';
+import { BackgroundDecorations } from '../../components/BackgroundDecorations';
 import { useAuthStore } from '../../../store/authStore';
 
 const signInSchema = z.object({
@@ -49,7 +50,7 @@ export function SignInPage() {
     } catch (error) {
       if (error instanceof z.ZodError) {
         const fieldErrors: Partial<Record<keyof SignInFormData, string>> = {};
-        error.errors.forEach((err) => {
+        error.issues.forEach((err: ZodIssue) => {
           if (err.path[0]) {
             fieldErrors[err.path[0] as keyof SignInFormData] = err.message;
           }
@@ -73,16 +74,17 @@ export function SignInPage() {
   };
 
   return (
-    <div className="min-h-[calc(100vh-4rem)] flex items-center justify-center py-12 px-4">
-      <div className="w-full max-w-md">
+    <div className="min-h-[calc(100vh-4rem)] flex items-center justify-center py-12 px-4 relative bg-white dark:bg-neutral-900">
+      <BackgroundDecorations />
+      <div className="w-full max-w-md relative z-10">
         <div className="text-center mb-8">
-          <h1 className="text-3xl mb-2">Welcome Back</h1>
-          <p className="text-gray-600">Sign in to your account</p>
+        <h1 className="text-3xl mb-2 text-neutral-900 dark:text-neutral-100 font-display">Welcome Back</h1>
+          <p className="text-neutral-600 dark:text-neutral-400">Sign in to your account</p>
         </div>
 
-        <form onSubmit={handleSubmit} className="bg-white border border-gray-200 rounded-2xl p-8 space-y-6">
+        <form onSubmit={handleSubmit} className="bg-white dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 rounded-2xl p-8 space-y-6 backdrop-blur-sm">
           <div>
-            <label htmlFor="email" className="block text-sm mb-2">
+            <label htmlFor="email" className="block text-sm mb-2 font-medium text-neutral-700 dark:text-neutral-300">
               Email
             </label>
             <input
@@ -90,18 +92,18 @@ export function SignInPage() {
               type="email"
               value={formData.email}
               onChange={(e) => handleChange('email', e.target.value)}
-              className={`w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-black ${
-                errors.email ? 'border-red-500' : 'border-gray-300'
+              className={`w-full px-4 py-3 border rounded-lg bg-white dark:bg-neutral-700 text-neutral-900 dark:text-neutral-100 focus:outline-none focus:ring-2 focus:ring-indigo-500 dark:focus:ring-indigo-400 ${
+                errors.email ? 'border-red-500 dark:border-red-400' : 'border-neutral-300 dark:border-neutral-600'
               }`}
               placeholder="you@example.com"
             />
             {errors.email && (
-              <p className="mt-1 text-sm text-red-600">{errors.email}</p>
+              <p className="mt-1 text-sm text-red-600 dark:text-red-400">{errors.email}</p>
             )}
           </div>
 
           <div>
-            <label htmlFor="password" className="block text-sm mb-2">
+            <label htmlFor="password" className="block text-sm mb-2 font-medium text-neutral-700 dark:text-neutral-300">
               Password
             </label>
             <div className="relative">
@@ -110,43 +112,43 @@ export function SignInPage() {
                 type={showPassword ? 'text' : 'password'}
                 value={formData.password}
                 onChange={(e) => handleChange('password', e.target.value)}
-                className={`w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-black ${
-                  errors.password ? 'border-red-500' : 'border-gray-300'
+                className={`w-full px-4 py-3 border rounded-lg bg-white dark:bg-neutral-700 text-neutral-900 dark:text-neutral-100 focus:outline-none focus:ring-2 focus:ring-indigo-500 dark:focus:ring-indigo-400 ${
+                  errors.password ? 'border-red-500 dark:border-red-400' : 'border-neutral-300 dark:border-neutral-600'
                 }`}
                 placeholder="••••••••"
               />
               <button
                 type="button"
                 onClick={() => setShowPassword(!showPassword)}
-                className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500"
+                className="absolute right-3 top-1/2 -translate-y-1/2 text-neutral-500 dark:text-neutral-400"
               >
                 {showPassword ? <EyeOff className="w-5 h-5" /> : <Eye className="w-5 h-5" />}
               </button>
             </div>
             {errors.password && (
-              <p className="mt-1 text-sm text-red-600">{errors.password}</p>
+              <p className="mt-1 text-sm text-red-600 dark:text-red-400">{errors.password}</p>
             )}
           </div>
 
           <div className="flex justify-end">
-            <Link to="/auth/forgot-password" className="text-sm text-gray-600 hover:underline">
+            <Link to="/auth/forgot-password" className="text-sm text-indigo-600 dark:text-indigo-400 hover:text-indigo-700 dark:hover:text-indigo-300 transition-colors">
               Forgot password?
             </Link>
           </div>
 
           <button
             type="submit"
-            className="w-full py-3 bg-black text-white rounded-lg hover:bg-gray-800 transition-colors"
+            className="w-full py-3 bg-indigo-600 hover:bg-indigo-700 dark:bg-indigo-500 dark:hover:bg-indigo-600 text-white rounded-lg transition-colors font-semibold shadow-lg hover:shadow-indigo-500/50"
           >
             Sign In
           </button>
 
           <div className="relative">
             <div className="absolute inset-0 flex items-center">
-              <div className="w-full border-t border-gray-300" />
+              <div className="w-full border-t border-neutral-300 dark:border-neutral-600" />
             </div>
             <div className="relative flex justify-center text-sm">
-              <span className="px-2 bg-white text-gray-500">Or continue with</span>
+              <span className="px-2 bg-white dark:bg-neutral-800 text-neutral-500 dark:text-neutral-400">Or continue with</span>
             </div>
           </div>
 
