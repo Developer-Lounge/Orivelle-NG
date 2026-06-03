@@ -143,14 +143,14 @@ export function CheckoutPage() {
   }
 
   return (
-    <div className="bg-gray-50 min-h-screen py-12">
+    <div className="bg-gray-50 min-h-screen py-12 dark:bg-black">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h1 className="text-3xl mb-8">Checkout</h1>
+        <h1 className="text-3xl mb-8 text-center">Checkout</h1>
 
         <form onSubmit={handlePlaceOrder}>
           <div className="grid lg:grid-cols-3 gap-8">
             <div className="lg:col-span-2 space-y-6">
-              <div className="bg-white rounded-2xl p-6 space-y-6">
+              <div className="bg-white rounded-2xl p-6 space-y-6 dark:bg-gray-900">
                 <h2 className="text-xl">Delivery Address</h2>
 
                 <div className="grid md:grid-cols-2 gap-4">
@@ -300,7 +300,7 @@ export function CheckoutPage() {
                 </label>
               </div>
 
-              <div className="bg-white rounded-2xl p-6 space-y-4">
+              <div className="bg-white rounded-2xl p-6 space-y-4 dark:bg-gray-900">
                 <h2 className="text-xl">Payment Method</h2>
                 {errors.paymentMethod && (
                   <p className="text-sm text-red-600">{errors.paymentMethod}</p>
@@ -309,7 +309,7 @@ export function CheckoutPage() {
                 <label
                   className={`flex items-center gap-4 p-4 border-2 rounded-xl cursor-pointer transition-all ${
                     formData.paymentMethod === 'paystack'
-                      ? 'border-black bg-gray-50'
+                      ? 'border-black bg-gray-50 dark:bg-gray-900'
                       : 'border-gray-200 hover:border-gray-300'
                   }`}
                 >
@@ -328,10 +328,10 @@ export function CheckoutPage() {
                   </div>
                 </label>
 
-                <label
+                 <label
                   className={`flex items-center gap-4 p-4 border-2 rounded-xl cursor-pointer transition-all ${
-                    formData.paymentMethod === 'flutterwave'
-                      ? 'border-black bg-gray-50'
+                    formData.paymentMethod === 'paystack'
+                      ? 'border-black bg-gray-50 dark:bg-gray-900'
                       : 'border-gray-200 hover:border-gray-300'
                   }`}
                 >
@@ -350,10 +350,10 @@ export function CheckoutPage() {
                   </div>
                 </label>
 
-                <label
+                 <label
                   className={`flex items-center gap-4 p-4 border-2 rounded-xl cursor-pointer transition-all ${
-                    formData.paymentMethod === 'cod'
-                      ? 'border-black bg-gray-50'
+                    formData.paymentMethod === 'paystack'
+                      ? 'border-black bg-gray-50 dark:bg-gray-900'
                       : 'border-gray-200 hover:border-gray-300'
                   }`}
                 >
@@ -377,7 +377,7 @@ export function CheckoutPage() {
             </div>
 
             <div className="space-y-6">
-              <div className="bg-white rounded-2xl p-6 space-y-4">
+              <div className="bg-white rounded-2xl p-6 space-y-4 dark:bg-gray-900">
                 <h2 className="text-xl">Order Summary</h2>
 
                 <div className="space-y-4 max-h-96 overflow-y-auto">
@@ -431,7 +431,7 @@ export function CheckoutPage() {
                     />
                     <button
                       type="button"
-                      className="px-4 py-2 bg-gray-100 rounded-lg hover:bg-gray-200 transition-colors"
+                      className="px-4 py-2 bg-gray-100 rounded-lg hover:bg-gray-200 transition-colors dark:bg-gray-800 dark:hover:bg-gray-700"
                     >
                       Apply
                     </button>
