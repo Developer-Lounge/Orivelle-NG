@@ -38,5 +38,10 @@
     "id": "grocery",
     "name": "Grocery",
     "icon": "ShoppingBasket"
+  },
+  {
+    "id": "phones",
+    "name": "Phones & Accessories",
+    "icon": "phone"
   }
 ]

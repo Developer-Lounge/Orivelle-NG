@@ -166,35 +166,14 @@ input:focus, textarea:focus, select:focus {
   box-shadow: 0 0 0 3px rgba(129, 140, 248, 0.1);
 }
 
-/* Scrollbar Styling */
-::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
+/* Hide scrollbars across all browsers */
+* {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
 }
 
-::-webkit-scrollbar-track {
-  background: var(--bg-secondary-light);
-}
-
-.dark ::-webkit-scrollbar-track {
-  background: var(--bg-secondary-dark);
-}
-
-::-webkit-scrollbar-thumb {
-  background: var(--neutral-300);
-  border-radius: 4px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: var(--neutral-400);
-}
-
-.dark ::-webkit-scrollbar-thumb {
-  background: var(--neutral-600);
-}
-
-.dark ::-webkit-scrollbar-thumb:hover {
-  background: var(--neutral-500);
+*::-webkit-scrollbar {
+  display: none;
 }
 
 /* Animations */
