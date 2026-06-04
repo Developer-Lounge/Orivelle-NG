@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router';
 import { z, ZodIssue } from 'zod';
 import { Trash2, CreditCard } from 'lucide-react';
+import { OrderConfirmationModal } from '../components/OrderConfirmationModal';
 import { BackgroundDecorations } from '../components/BackgroundDecorations';
 import { useAuthStore } from '../../store/authStore';
 import { useCartStore } from '../../store/cartStore';
@@ -40,6 +41,10 @@ export function CheckoutPage() {
     paymentMethod: 'paystack',
   });
   const [errors, setErrors] = useState<Partial<Record<keyof CheckoutFormData, string>>>({});
+  const [modalState, setModalState] = useState<{
+    isOpen: boolean;
+    status: 'success' | 'error';
+  }>({ isOpen: false, status: 'success' });
 
   const subtotal = items.reduce((sum, item) => sum + item.price * item.quantity, 0);
   const deliveryFee = subtotal > 100 ? 0 : 9.99;
@@ -68,61 +73,49 @@ export function CheckoutPage() {
     setErrors({});
 
     if (items.length === 0) {
-      alert('Your cart is empty');
+      setModalState({ isOpen: true, status: 'error' });
       return;
     }
 
-    try {
-      const validatedData = checkoutSchema.parse(formData);
+    const isValid = checkoutSchema.safeParse(formData);
 
+    if (!isValid.success) {
+      const fieldErrors: Partial<Record<keyof CheckoutFormData, string>> = {};
+      isValid.error.issues.forEach((err: ZodIssue) => {
+        if (err.path[0]) {
+          fieldErrors[err.path[0] as keyof CheckoutFormData] = err.message;
+        }
+      });
+      setErrors(fieldErrors);
+      return;
+    }
+
+    const validatedData = isValid.data;
+
+    try {
       // TODO: Replace with actual payment integration
       if (validatedData.paymentMethod === 'paystack') {
         // TODO: Initialize Paystack payment
-        // Example:
-        // const response = await fetch('/api/payment/paystack/initialize', {
-        //   method: 'POST',
-        //   headers: { 'Content-Type': 'application/json' },
-        //   body: JSON.stringify({ amount: total * 100, email: validatedData.email }),
-        // });
-        // const { authorization_url } = await response.json();
-        // window.location.href = authorization_url;
         console.log('Paystack payment initialized:', { amount: total, ...validatedData });
       } else if (validatedData.paymentMethod === 'flutterwave') {
         // TODO: Initialize Flutterwave payment
-        // Example:
-        // const response = await fetch('/api/payment/flutterwave/initialize', {
-        //   method: 'POST',
-        //   headers: { 'Content-Type': 'application/json' },
-        //   body: JSON.stringify({ amount: total, email: validatedData.email }),
-        // });
-        // const { link } = await response.json();
-        // window.location.href = link;
         console.log('Flutterwave payment initialized:', { amount: total, ...validatedData });
       } else if (validatedData.paymentMethod === 'cod') {
         // TODO: Create order with COD payment method
-        // Example:
-        // await fetch('/api/orders', {
-        //   method: 'POST',
-        //   headers: { 'Content-Type': 'application/json' },
-        //   body: JSON.stringify({ ...validatedData, items, total }),
-        // });
         console.log('Cash on delivery order placed:', { ...validatedData, items, total });
       }
 
-      // Clear cart and redirect
       clearCart();
-      alert('Order placed successfully!');
+      setModalState({ isOpen: true, status: 'success' });
+    } catch {
+      setModalState({ isOpen: true, status: 'error' });
+    }
+  };
+
+  const handleCloseModal = () => {
+    setModalState({ isOpen: false, status: modalState.status });
+    if (modalState.status === 'success') {
       navigate('/');
-    } catch (error) {
-      if (error instanceof z.ZodError) {
-        const fieldErrors: Partial<Record<keyof CheckoutFormData, string>> = {};
-        error.issues.forEach((err: ZodIssue) => {
-          if (err.path[0]) {
-            fieldErrors[err.path[0] as keyof CheckoutFormData] = err.message;
-          }
-        });
-        setErrors(fieldErrors);
-      }
     }
   };
 
@@ -469,6 +462,12 @@ export function CheckoutPage() {
             </div>
           </div>
         </form>
+
+        <OrderConfirmationModal
+          isOpen={modalState.isOpen}
+          status={modalState.status}
+          onClose={handleCloseModal}
+        />
       </div>
     </div>
   );
