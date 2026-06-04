@@ -13,6 +13,8 @@ import { NewArrivalsPage } from "./pages/NewArrivalsPage";
 import { HelpCenterPage } from "./pages/HelpCenterPage";
 import { TrackOrderPage } from "./pages/TrackOrderPage";
 import { ReturnsPage } from "./pages/ReturnsPage";
+import { OrdersPage } from "./pages/account/OrdersPage";
+import { NotificationsPage } from "./pages/account/NotificationsPage";
 
 export const router = createBrowserRouter([
   {
@@ -28,6 +30,8 @@ export const router = createBrowserRouter([
       { path: "help-center", Component: HelpCenterPage },
       { path: "track-order", Component: TrackOrderPage },
       { path: "returns", Component: ReturnsPage },
+      { path: "account/orders", Component: OrdersPage },
+      { path: "account/notifications", Component: NotificationsPage },
       { path: "auth/signup", Component: SignUpPage },
       { path: "auth/signin", Component: SignInPage },
       { path: "checkout", Component: CheckoutPage },

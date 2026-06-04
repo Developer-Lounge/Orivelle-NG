@@ -5,6 +5,7 @@ import { Trash2, CreditCard } from 'lucide-react';
 import { OrderConfirmationModal } from '../components/OrderConfirmationModal';
 import { useAuthStore } from '../../store/authStore';
 import { useCartStore } from '../../store/cartStore';
+import { useOrderStore } from '../../store/orderStore';
 import { QuantityInput } from '../components/QuantityInput';
 import nigerianStates from '../../data/nigerian-states.json';
 
@@ -26,6 +27,7 @@ type CheckoutFormData = z.infer<typeof checkoutSchema>;
 export function CheckoutPage() {
   const navigate = useNavigate();
   const isAuthenticated = useAuthStore((state) => state.isAuthenticated);
+  const addOrder = useOrderStore((state) => state.addOrder);
   const { items, removeItem, updateQuantity, clearCart } = useCartStore();
   const [formData, setFormData] = useState<CheckoutFormData>({
     fullName: '',
@@ -92,6 +94,21 @@ export function CheckoutPage() {
     const validatedData = isValid.data;
 
     try {
+      const order = {
+        items,
+        subtotal,
+        deliveryFee,
+        total,
+        status: 'confirmed' as const,
+        paymentMethod: validatedData.paymentMethod,
+        fullName: validatedData.fullName,
+        streetAddress: validatedData.streetAddress,
+        city: validatedData.city,
+        state: validatedData.state,
+        postalCode: validatedData.postalCode,
+        createdAt: new Date().toISOString(),
+      };
+
       // TODO: Replace with actual payment integration
       if (validatedData.paymentMethod === 'paystack') {
         console.log('Paystack payment initialized:', { amount: total, ...validatedData });
@@ -101,6 +118,7 @@ export function CheckoutPage() {
         console.log('Cash on delivery order placed:', { ...validatedData, items, total });
       }
 
+      addOrder(order);
       clearCart();
       setModalState({ isOpen: true, status: 'success' });
     } catch {
