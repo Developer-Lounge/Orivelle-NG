@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import { motion } from 'motion/react';
 import { BackgroundDecorations } from '../components/BackgroundDecorations';
 import { HeroCarousel } from '../components/HeroCarousel';
@@ -8,7 +7,6 @@ import { AdvertBanner } from '../components/AdvertBanner';
 import productsData from '../../data/products.json';
 
 export function HomePage() {
-  const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
 
   // TODO: Replace with actual API call to fetch products by category
   const featuredProducts = productsData;
@@ -43,7 +41,7 @@ export function HomePage() {
           viewport={{ once: true }}
         >
           <h2 className="text-2xl mb-6">Shop by Category</h2>
-          <CategoryGrid onCategorySelect={setSelectedCategory} />
+          <CategoryGrid />
         </motion.section>
 
         <motion.section

@@ -6,6 +6,7 @@ import { SignUpPage } from "./pages/auth/SignUpPage";
 import { SignInPage } from "./pages/auth/SignInPage";
 import { CheckoutPage } from "./pages/CheckoutPage";
 import { NotFoundPage } from "./pages/NotFoundPage";
+import { CategoryPage } from "./pages/CategoryPage";
 import { AllProductsPage } from "./pages/AllProductsPage";
 import { FlashSalesPage } from "./pages/FlashSalesPage";
 import { NewArrivalsPage } from "./pages/NewArrivalsPage";
@@ -20,6 +21,7 @@ export const router = createBrowserRouter([
     children: [
       { index: true, Component: HomePage },
       { path: "product/:slug", Component: ProductPage },
+      { path: "category/:slug", Component: CategoryPage },
       { path: "products", Component: AllProductsPage },
       { path: "flash-sales", Component: FlashSalesPage },
       { path: "new-arrivals", Component: NewArrivalsPage },
