@@ -39,12 +39,14 @@ export function RootLayout() {
         initial={{ y: 0 }}
         animate={{ y: 0 }}
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between gap-4">
-          <Link to="/" className="text-2xl flex-shrink-0 font-display font-bold tracking-tight">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between gap-2 sm:gap-4">
+          <Link to="/" className="text-lg sm:text-2xl flex-shrink-0 font-display font-bold tracking-tight">
             <span className="text-neutral-900 dark:text-white">Orivelle</span>
           </Link>
-          <SearchBar />
-          <div className="flex items-center gap-2">
+          <div className="flex-1 min-w-0">
+            <SearchBar />
+          </div>
+          <div className="flex items-center gap-1 sm:gap-2 flex-shrink-0">
             <ThemeToggle />
             <NavbarUserSection />
           </div>
@@ -73,7 +75,7 @@ export function RootLayout() {
       {/* footer */}
       <footer className="relative z-10 bg-neutral-900 dark:bg-neutral-950 text-white mt-20 border-t border-neutral-700/50 dark:border-neutral-800/50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-          <div className="grid md:grid-cols-4 gap-8 mb-8">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 mb-8">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}

@@ -47,7 +47,7 @@ export function NotificationsPage() {
     <div className="bg-neutral-50 dark:bg-neutral-900 min-h-screen pb-20 transition-colors duration-300 relative overflow-hidden">
       <BackgroundDecorations />
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-10">
-        <div className="rounded-3xl bg-white dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 p-8 shadow-xl">
+        <div className="rounded-3xl bg-white dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 p-5 sm:p-8 shadow-xl">
           <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
             <div>
               <p className="inline-flex items-center gap-2 rounded-full bg-sky-100 text-sky-800 px-3 py-1 text-sm font-semibold dark:bg-sky-900/20 dark:text-sky-200">
@@ -71,11 +71,11 @@ export function NotificationsPage() {
         </div>
 
         <div className="grid gap-6 xl:grid-cols-[1.3fr_0.7fr]">
-          <section className="space-y-6">
+          <section className="space-y-6 order-2 xl:order-1">
             {alerts.map((alert) => {
               const Icon = alert.icon;
               return (
-                <div key={alert.title} className="rounded-3xl border border-neutral-200 dark:border-neutral-700 bg-white dark:bg-neutral-800 p-6 shadow-xl">
+                <div key={alert.title} className="rounded-3xl border border-neutral-200 dark:border-neutral-700 bg-white dark:bg-neutral-800 p-4 sm:p-6 shadow-xl">
                   <div className="flex items-start gap-4">
                     <div className="rounded-2xl bg-indigo-50 dark:bg-indigo-950/30 p-3 text-indigo-600 dark:text-indigo-300">
                       <Icon className="w-5 h-5" />
@@ -106,7 +106,7 @@ export function NotificationsPage() {
             </div>
           </section>
 
-          <aside className="space-y-6">
+          <aside className="space-y-6 order-1 xl:order-2">
             <div className="rounded-3xl border border-neutral-200 dark:border-neutral-700 bg-white dark:bg-neutral-800 p-6 shadow-xl">
               <div className="flex items-center gap-3">
                 <div className="rounded-2xl bg-amber-100 text-amber-800 p-3">

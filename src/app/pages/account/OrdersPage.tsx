@@ -40,7 +40,7 @@ export function OrdersPage() {
     <div className="bg-neutral-50 dark:bg-neutral-900 min-h-screen pb-20 transition-colors duration-300 relative overflow-hidden">
       <BackgroundDecorations />
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="mb-10 rounded-3xl bg-white dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 p-8 shadow-xl">
+        <div className="mb-10 rounded-3xl bg-white dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 p-5 sm:p-8 shadow-xl">
           <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
             <div>
               <p className="inline-flex items-center gap-2 rounded-full bg-indigo-100 text-indigo-800 px-3 py-1 text-sm font-semibold dark:bg-indigo-950/40 dark:text-indigo-300">
@@ -109,10 +109,10 @@ export function OrdersPage() {
                 <div className="mt-6 grid gap-4 lg:grid-cols-[1.5fr_1fr]">
                   <div className="space-y-4">
                     {order.items.map((item) => (
-                      <div key={item.variantId} className="flex items-center gap-4 rounded-3xl border border-neutral-200 dark:border-neutral-700 p-4 bg-neutral-50 dark:bg-neutral-950/30">
-                        <img src={item.image} alt={item.productName} className="h-20 w-20 rounded-3xl object-cover" />
-                        <div>
-                          <h3 className="text-sm font-semibold text-neutral-900 dark:text-white">{item.productName}</h3>
+                      <div key={item.variantId} className="flex items-center gap-3 sm:gap-4 rounded-3xl border border-neutral-200 dark:border-neutral-700 p-3 sm:p-4 bg-neutral-50 dark:bg-neutral-950/30">
+                        <img src={item.image} alt={item.productName} className="h-16 w-16 sm:h-20 sm:w-20 rounded-2xl sm:rounded-3xl object-cover flex-shrink-0" />
+                        <div className="min-w-0">
+                          <h3 className="text-sm font-semibold text-neutral-900 dark:text-white truncate">{item.productName}</h3>
                           <p className="text-xs text-neutral-500 dark:text-neutral-400">{item.brand} • {item.color} • {item.size}</p>
                           <p className="text-sm font-semibold text-neutral-900 dark:text-neutral-100">{item.quantity} x ₦{item.price.toFixed(2)}</p>
                         </div>

@@ -128,7 +128,7 @@ export function ProductPage() {
         </div>
       </main>
 
-      <div className="lg:hidden fixed bottom-0 left-0 right-0 bg-white dark:bg-neutral-800 border-t border-neutral-200 dark:border-neutral-700 p-4 z-20 backdrop-blur-sm">
+      <div className="lg:hidden fixed bottom-0 left-0 right-0 bg-white dark:bg-neutral-800 border-t border-neutral-200 dark:border-neutral-700 p-4 pb-safe z-20 backdrop-blur-sm">
         <div className="flex items-center gap-3">
           <div className="flex-1">
             <p className="text-sm text-neutral-500 dark:text-neutral-400">Price</p>

@@ -26,7 +26,7 @@ export function HeroCarousel() {
   const currentSlide = heroSlidesData[currentIndex];
 
   return (
-    <div className="relative h-[400px] lg:h-[500px] bg-gray-900 rounded-2xl overflow-hidden group">
+    <div className="relative h-[240px] sm:h-[340px] lg:h-[500px] bg-gray-900 rounded-2xl overflow-hidden group">
       <AnimatePresence mode="wait">
         <motion.div
           key={currentSlide.id}
@@ -48,7 +48,7 @@ export function HeroCarousel() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.2 }}
-                className="text-4xl lg:text-6xl mb-4"
+                className="text-2xl sm:text-4xl lg:text-6xl mb-2 sm:mb-4"
               >
                 {currentSlide.title}
               </motion.h2>
@@ -56,7 +56,7 @@ export function HeroCarousel() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.3 }}
-                className="text-lg lg:text-xl text-gray-200 mb-6"
+                className="text-sm sm:text-lg lg:text-xl text-gray-200 mb-4 sm:mb-6 hidden sm:block"
               >
                 {currentSlide.subtitle}
               </motion.p>
@@ -79,17 +79,17 @@ export function HeroCarousel() {
 
       <button
         onClick={handlePrevious}
-        className="absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 flex items-center justify-center bg-white/90 backdrop-blur-sm rounded-full shadow-lg opacity-0 group-hover:opacity-100 transition-opacity hover:bg-white dark:bg-black"
+        className="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 w-8 h-8 sm:w-12 sm:h-12 flex items-center justify-center bg-white/90 backdrop-blur-sm rounded-full shadow-lg opacity-70 sm:opacity-0 group-hover:opacity-100 transition-opacity hover:bg-white dark:bg-black"
         aria-label="Previous slide"
       >
-        <ChevronLeft className="w-6 h-6" />
+        <ChevronLeft className="w-4 h-4 sm:w-6 sm:h-6" />
       </button>
       <button
         onClick={handleNext}
-        className="absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 flex items-center justify-center bg-white/90 backdrop-blur-sm rounded-full shadow-lg opacity-0 group-hover:opacity-100 transition-opacity hover:bg-white dark:bg-black"
+        className="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 w-8 h-8 sm:w-12 sm:h-12 flex items-center justify-center bg-white/90 backdrop-blur-sm rounded-full shadow-lg opacity-70 sm:opacity-0 group-hover:opacity-100 transition-opacity hover:bg-white dark:bg-black"
         aria-label="Next slide"
       >
-        <ChevronRight className="w-6 h-6" />
+        <ChevronRight className="w-4 h-4 sm:w-6 sm:h-6" />
       </button>
 
       <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-2">

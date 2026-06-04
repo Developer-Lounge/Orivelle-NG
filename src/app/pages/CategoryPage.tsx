@@ -1,5 +1,7 @@
+import { useState } from 'react';
 import { useParams, Link } from 'react-router';
-import { motion } from 'motion/react';
+import { motion, AnimatePresence } from 'motion/react';
+import { SlidersHorizontal, ChevronDown } from 'lucide-react';
 import {
   Breadcrumb,
   BreadcrumbList,
@@ -28,6 +30,7 @@ const ratingOptions = [5, 4, 3, 2, 1];
 
 export function CategoryPage() {
   const { slug } = useParams();
+  const [filtersOpen, setFiltersOpen] = useState(false);
 
   const category = categoriesData.find((c) => c.id === slug);
 
@@ -100,9 +103,45 @@ export function CategoryPage() {
           </p>
         </motion.div>
 
+        {/* Mobile Filter Toggle */}
+        <div className="lg:hidden mb-4">
+          <button
+            onClick={() => setFiltersOpen(!filtersOpen)}
+            className="w-full flex items-center justify-between px-4 py-3 bg-neutral-50 dark:bg-neutral-800/50 border border-neutral-200 dark:border-neutral-700 rounded-xl font-semibold text-sm text-neutral-700 dark:text-neutral-300"
+          >
+            <span className="flex items-center gap-2">
+              <SlidersHorizontal className="w-4 h-4 text-indigo-500" />
+              Filters
+            </span>
+            <ChevronDown className={`w-4 h-4 transition-transform ${filtersOpen ? 'rotate-180' : ''}`} />
+          </button>
+          <AnimatePresence>
+            {filtersOpen && (
+              <motion.div
+                initial={{ height: 0, opacity: 0 }}
+                animate={{ height: 'auto', opacity: 1 }}
+                exit={{ height: 0, opacity: 0 }}
+                transition={{ duration: 0.25 }}
+                className="overflow-hidden mt-2"
+              >
+                <div className="bg-neutral-50 dark:bg-neutral-800/50 p-5 rounded-2xl border border-neutral-200/50 dark:border-neutral-700/50 space-y-6">
+                  <div className="space-y-3">
+                    <label className="text-xs font-bold uppercase tracking-wider text-neutral-500 dark:text-neutral-400">Price Range</label>
+                    <div className="flex gap-2">
+                      <input type="number" placeholder="Min" className="w-full px-3 py-2 bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-700 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500/20 text-neutral-800 dark:text-neutral-100" />
+                      <span className="text-neutral-400 self-center">—</span>
+                      <input type="number" placeholder="Max" className="w-full px-3 py-2 bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-700 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500/20 text-neutral-800 dark:text-neutral-100" />
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
+            )}
+          </AnimatePresence>
+        </div>
+
         <div className="grid lg:grid-cols-4 gap-8">
-          {/* Filter Sidebar */}
-          <aside className="lg:col-span-1">
+          {/* Desktop Filter Sidebar */}
+          <aside className="hidden lg:block lg:col-span-1">
             <div className="sticky top-24 bg-neutral-50 dark:bg-neutral-800/50 p-5 rounded-2xl border border-neutral-200/50 dark:border-neutral-700/50 space-y-6">
               <h2 className="font-semibold text-neutral-900 dark:text-neutral-100 text-base">
                 Filters

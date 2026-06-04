@@ -88,7 +88,7 @@ export function SignUpPage() {
           <p className="text-neutral-600 dark:text-neutral-400">Sign up to get started</p>
         </div>
 
-        <form onSubmit={handleSubmit} className="bg-white dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 rounded-2xl p-8 space-y-6 backdrop-blur-sm">
+        <form onSubmit={handleSubmit} className="bg-white dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 rounded-2xl p-5 sm:p-8 space-y-6 backdrop-blur-sm">
           <div>
             <label htmlFor="fullName" className="block text-sm mb-2 font-medium text-neutral-700 dark:text-neutral-300">
               Full Name
