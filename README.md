@@ -5,7 +5,7 @@ A production-ready e-commerce web application built with React, TypeScript, and 
 ## 🎯 Key Features
 
 ### Multi-Page Application
-- **Landing Page** - Jumia-style homepage with hero carousel, category grid, flash sales, and product grids
+- **Landing Page** - Minimal and neat homepage with hero carousel, category grid, flash sales, and product grids
 - **Product Detail Pages** - Variant selection, image galleries, stock management
 - **Authentication** - Sign up and sign in pages with validation
 - **Checkout Flow** - Single-page checkout with address, payment, and order summary
